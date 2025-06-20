@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>who we are</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: monospace;
+      overflow: hidden;
+    }
+
+    .menu-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.068);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding-top: 0px;
+      z-index: 0;
+    }
+
+    .menu-bar a {
+      color: white;
+      text-decoration: none;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .menu-bar img {
+      width: 90px;
+      padding: 5px 5px;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      margin-left: 60px;
+    }
+
+    .left-side {
+      width: 60%;
+      position: relative;
+      background-color: white;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 0px;
+      font-size: 14px;
+      text-decoration: underline;
+      color: black;
+      background: transparent;
+      padding: 4px 8px;
+      z-index: 3;
+    }
+
+    .static-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('your-static-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      z-index: 1;
+    }
+
+    .center-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin-top: 30px; /* to avoid overlap with back-button */
+      margin-left: 0px;
+      padding: 0px;
+      background-color: transparent;
+      overflow-y: auto;
+      max-height: 100vh; /* Enables scrolling within this area */
+    }
+
+    .center-content h2 {
+      font-size: 2vh;
+      font-style: italic;
+      margin-top: -13px;
+      margin-left: -10px;
+    }
+
+    .center-content img {
+      width: 100%;
+      display: block;
+      margin-top: 0px;
+    }
+
+    .right-side {
+      width: 80%;
+      position: relative;
+      overflow-y: scroll;
+      background-color: #fff;
+    }
+
+    .scroll-image {
+      width: 100%;
+    }
+
+    .scroll-image img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-bar">
+    <a href="givertaker.html"><img src="imagenes/wifi.png" alt="1"></a>
+    <a href="screenfull.html"><img src="imagenes/zip.png" alt="2"></a>
+    <a href="tuyyo.html"><img src="imagenes/png.png" alt="3"></a>
+    <a href="porfavor.html"><img src="imagenes/print.png" alt="4"></a>
+    <a href="candados.html"><img src="imagenes/llaveicono.png" alt=""></a>
+  </div>
+
+  <div class="container">
+    <div class="left-side">
+      <a href="index.html" class="back-button">go back</a>
+      <div class="static-background"></div>
+
+      <div class="center-content">
+        <h1>this code is a mess, but so is life</h1>
+        <h2>*scroll scroll*</h2>
+        <img src="imagenes/codigo.png" alt="Imagen dentro de center-content" />
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="scroll-image">
+        <img src="imagenes/palimpblanco.jpg" alt="Scrolling Image" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>

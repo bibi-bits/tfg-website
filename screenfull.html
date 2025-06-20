@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: content-box;
+    }
+
+    body {
+      font-family: monospace;
+      color: black;
+      background-image: url(imagenes/KarinFischerSpirit.jpg);
+      background-repeat: repeat;
+      background-size: 50% 50%;
+      background-attachment: fixed;
+      background-position: center;
+      line-height: 1.4;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .navbar {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      padding: 0;
+      background: transparent;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+     
+    }
+
+    .content {
+      padding: 300px 0px 0px;
+      max-width: 900px;
+      
+    }
+
+    .text-block h1,
+    .text-block p,
+    .media-block h1,
+    .media-block h2,
+    .image-gallery h1,
+    .image-gallery h2,
+    a {
+      display: inline;
+      text-decoration: underline;
+      background-color: white;
+      padding: 0em;
+      color: black;
+    }
+
+    .text-block {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .text-block h1 {
+      font-size: 12px;
+      margin-bottom: 0px;
+    }
+
+    .image-gallery {
+      display: inline-block;
+      gap: 6px;
+      margin-bottom: 0px;
+    }
+
+    .image-gallery img {
+      width: 48%;
+      object-fit: fill;
+      margin-bottom: 2px;
+    }
+
+    .image-gallery h2{
+      font-size: 10px;
+    }
+
+    .image-gallery h3{
+      font-size: 10px;
+      color: white;
+      background-color: black;
+      padding: 0;
+      display: inline-block;
+      text-decoration: underline;
+      text-decoration-color: white;
+
+    }
+
+    .media-block {
+      margin-bottom: 20px;
+    }
+
+    .media-block h2 {
+      font-size: 10px;
+      margin: 3px 0;
+    }
+
+    .media-block h3 {
+      font-size: 10px;
+      color: white;
+      background-color: black;
+      padding: 0;
+      display: inline-block;
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-bottom: 10px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 100%;
+      border: none;
+    }
+
+    audio {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.05);
+      margin-bottom: 3px;
+    }
+
+    .free-image {
+      width: 80%;
+    }
+
+    .large-image {
+      margin-left: 30em;
+      height: 100px;
+    }
+
+    .links {
+      margin-top: 30px;
+      color: blue; /*no sale fkng blue porque las a estan metidas en el paqueete ese de style de arriba para que tenga el fondo blanco entonces la orden esta que esta negra i gueesss??????? me voy a matar ya con este cogido te lo digo así*/
+      text-decoration: underline;
+      background-color: white;
+      display: inline-block
+    }
+
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="#">Vision</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="https://www.abduct.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="text-block">
+      <h1>echo chamber</h1>
+      <br>
+      <p>This is a digital arena for sound and vision. Every echo is a decision. Step inside, hear the feedback, feel the signal.</p>
+    </section>
+
+    <section class="image-gallery">
+      <h3>this code is a mess, this archive is a mess.</h3>
+      <br>
+      <h2>lolo&sosaku</h2>
+      <br>
+      <img src="imagenes/screenfull/sosaku.jpg" alt="Imagen 1">
+      <img src="imagenes/screenfull/LOLOYSOSAKU.jpg" alt="Imagen 2">
+    </section>
+
+    <section class="image-gallery">
+      <div class="text-block" >
+        <h2>in space we believe</h2>
+      </div>
+      <div class="free-image">
+      <img src="imagenes/screenfull/neurolab_2.webp">
+      </div>
+    </section>
+
+    <section class="text-block"> 
+       <h1>Praat Software.</h1>
+       <a href="https://www.fon.hum.uva.nl/praat/">Click here</a>
+    </section>
+
+    <section class="image-gallery">
+      <img src="">
+      <img src="imagenes/screenfull/PraatMuestrasF0.png" alt="Imagen 4">
+    </section>
+
+    <section class="media-block">
+      <h2>Peter Ablinger</h2>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/Wpt3lmSFW3k"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="media-block">
+      <h2>Cantos A La Virgen aspe Miradla</h2>
+          <audio controls>
+            <source src="imagenes/screenfull/Cantos a la virgen aspe Miradla (online-audio-converter.com).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+      </section>
+
+    <section class="image-gallery">
+      <h2>bees</h2>
+        <div class="free-image">
+          <img src="imagenes/screenfull/bees.png">
+        </div>   
+    </section>
+
+    <section class="media-block">
+      <h2>Cosmological simulation of universe evolution</h2>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/xfgDoExbu_Q"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <div class="image-gallery">
+      <h3>el jardín de la neurología.</h3>
+      <h2>Javier de Felipee </h2>
+      <br>
+      <img src="imagenes/screenfull/charla_javierdefelipe.PNG" alt="charla_javierdefelipe">
+      <br>
+      <h2>can't help myself. Sung Yuan Peng Yu </h2>
+      <br>
+      <img src="imagenes/screenfull/cant_help_myself.jpg" alt="">
+      <br>
+      <h3>The Cosmic Clock.</h3>
+      <h2>manuscript from thee Benedictine Abbey of saint-Beertin</h2>
+      <br>
+      <img src="imagenes/screenfull/Captura de pantalla 2025-05-28 a las 0.09.46.png" alt="">
+    </div>
+
+    <div class="media-block">
+      <h3>TemploOS.</h3>
+      <h2>Terry Davis</h2>
+      <br>
+      <img src="imagenes/screenfull/templeOs_gif.gif" alt="">
+      <br>
+    <div class="image-gallery">
+      <h2>caribe mix</h2>
+      <br>
+      <img src="imagenes/screenfull/esquema_tiqun.png" alt="">
+      <img src="imagenes/screenfull/milenium_xxl.jpg" alt="">
+    </div>
+
+    <div class="links">
+      <h3>LINKS</h3>
+      <ul>
+        <li><a href="https://rhizome.org/climate-impact/">3%/483hFGR.d24</a></li>
+        <li><a href="https://space.jpl.nasa.gov/">474f_37&/fwGY</a></li>
+        <li><a href="https://galformod.mpa-garching.mpg.de/mxxlbrowser/">37dGGH82_000</a></li>
+        <li><a href="https://publicdomainreview.org/collection/baraduc-soul/">"5nffG&/.fr:</a></li>
+        <li><a href="https://richardcoyne.com/2020/10/31/high-energy-superstition/">amSMm2%%4-_,50?</a></li>
+        <li><a href="">26vb9$=Dhjjd_jh63</a></li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

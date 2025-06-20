@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Visiones</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+    .left, .right {
+      width: 50%;
+      height: 100%;
+    }
+    .left {
+      overflow-y: scroll;
+      background-color: #000;
+    }
+    .left img {
+      width: 100%;
+      display: block;
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar {
+      background-color:#760909;
+      color: rgb(0, 0, 0);
+      padding: 1em;
+      display: flex;
+      justify-content: center;
+      gap: 3em;
+      
+    }
+    .navbar a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-family: monospace;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+   .content {
+      flex-grow: 1;
+      overflow-y: scroll;
+      padding: 1em;
+      background-color: #760909;
+      color: #ffffff;
+      text-align: justify;
+      white-space: pre-wrap; /* respeta saltos de línea del .txt */
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="imagenes/lo_que_no_pueden_ver_los_ojos_fisicos_DEF.jpg" alt="Eyes">
+    </div>
+    <div class="right">
+      <div class="navbar">
+        <a href="index.html">REGRET</a>
+        <a href="spawn.html">SPAWN</a>
+        <a href="letter.html">LETTER</a>
+        <a href="#" class="menu-item" onclick="openHelp()">HELP</a>
+      </div>
+      <div class="content">
+         <div class="content" id="texto"></div>
+      </div>
+    </div>
+  </div>
+   <script>
+    // Cargar visiones.txt y mostrarlo en el div
+    fetch('visiones.txt')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("No se pudo cargar visiones.txt");
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('texto').textContent = data;
+      })
+      .catch(error => {
+        document.getElementById('texto').textContent = "Error al cargar el texto: " + error.message;
+      });
+  </script>
+  
+   <script src="future.js"></script>
+</body>
+</html>

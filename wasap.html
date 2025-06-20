@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>conversations</title>
+  <style>
+    body { /*/ este es EL QUE ESTA MAL EN VERDE Y SO UF*/
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      overflow: hidden;
+      font-family: monospace;
+      color: rgb(19, 221, 63);
+    }
+
+    /* Contenedor general que permite el scroll */
+    .outer-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow-x: scroll;
+      overflow-y: scroll;
+      margin-bottom: -300px;
+    }
+
+    /* Texto rotado 90° a la izquierda */
+    .rotated-text {
+      transform: rotate(-90deg);
+      position:initial;
+      margin-top: 50px;
+      transform-origin: center;
+      white-space: pre; /* respeta saltos de línea y espacios */
+      padding-left: 0%;
+      min-height: 100vw;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-container">
+    <div class="rotated-text" id="text-container">
+      <!-- El texto del archivo externo se cargará aquí -->
+    </div>
+  </div>
+
+  <script>
+    fetch('texto.txt')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('text-container').textContent = data;
+      })
+      .catch(error => {
+        console.error('Error al cargar el archivo:', error);
+        document.getElementById('text-container').textContent = 'No se pudo cargar el texto.';
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spawn and Click Boxes</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: white;
+      font-family: sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #itemCount {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #444;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    #spawnBtn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      color: black;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: normal;
+    }
+
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: rgba(0, 0, 0, 0);
+      background-image: url(imagenes/virgen.png);
+      background-size:contain;
+      background-position: center;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .hidden-message {
+      position: absolute;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: monospace;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="itemCount">to kill</div>
+<a href="index.html" id="spawnBtn">run away</a>
+
+<script>
+  let itemCount = 0;
+
+  const updateCounter = () => {
+    document.getElementById("itemCount").textContent = "to kill: " + itemCount;
+  };
+
+  const spawnBox = () => {
+    const box = document.createElement("div");
+    box.className = "box";
+
+    // Posición aleatoria dentro del viewport
+    const maxX = window.innerWidth - 400;
+    const maxY = window.innerHeight - 400;
+    box.style.left = Math.random() * maxX + "px";
+    box.style.top = Math.random() * maxY + "px";
+
+    // Evento de clic para eliminar
+    box.addEventListener("click", () => {
+      box.remove();
+      itemCount--;
+      updateCounter();
+    });
+
+    document.body.appendChild(box);
+    itemCount++;
+    updateCounter();
+
+    // Cada 3 cajas, añadir mensaje
+    if (itemCount % 3 === 0) {
+      const msg = document.createElement("div");
+      msg.className = "hidden-message";
+      msg.textContent = "can you find me?";
+
+      // Posición aleatoria del mensaje
+      msg.style.left = Math.random() * (window.innerWidth - 150) + "px";
+      msg.style.top = Math.random() * (window.innerHeight - 30) + "px";
+
+      document.body.appendChild(msg);
+    }
+  };
+
+  // Spawnea cajas automáticamente
+  setInterval(spawnBox, 500);
+</script>
+
+</body>
+</html>

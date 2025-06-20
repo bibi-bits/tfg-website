@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>the giver the taker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    body, html {
+      height: 100%;
+      font-family:monospace;
+      text-decoration: underline;
+      color:blue;
+      overflow: hidden; /* Evita scroll general */
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .column {
+      flex: 1;
+      overflow-y: scroll;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+    }
+
+    .column:last-child {
+      border-right: none;
+    }
+
+    .toc {
+      margin-bottom: 20px;
+    }
+
+    .image-section {
+      margin-top: 20px;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-height: 600px;
+      object-fit:contain;
+      margin-bottom: 100px;
+    }
+
+    .bottom img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      align-content: center;
+      width: 70%;
+      object-fit: cover;
+      margin-bottom: 150px;
+    }
+
+    .boton-link {
+      display: inline-block;
+      padding: 10px 50px;
+      background-color: blue;
+      color: rgb(255, 255, 255);
+      text-decoration: underline;
+      font-family:monospace;
+      transition: background-color 0.3s;
+    }
+
+    .boton-link:hover {
+      background-color: #3752ff;
+    }
+
+     .popup {
+    width: 300px;
+    background-color: #e0e0e0;
+    border: 2px outset #fff;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: none;
+    z-index: 1000;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Columna Izquierda -->
+    <div class="column">
+      <div class="toc">
+        <h2>the giver</h2>
+        <ul>we</ul>
+        <ul>are</ul>
+        <ul>so</ul>
+        <ul>back</ul>
+      </div>
+
+      <div class="image-section">
+        <img src="imagenes/caliz.png" alt="Imagen 1">
+      </div>
+      <div class="bottom">
+        <img src="imagenes/MODEM .png" alt="Imagen inferior izquierda">
+      </div> 
+
+      <div class="buttons">
+        <a href="when.html" class="boton-link">when</a>
+      </div>
+    </div>
+
+    <!-- Columna Derecha -->
+    <div class="column">
+      <div class="toc">
+        <h2>the taker</h2>
+        <ul>it</ul>
+        <ul>is</ul> 
+        <ul>so</ul> 
+        <ul>over</ul>
+      </div>
+
+      <div class="image-section">
+        <img src="imagenes/cruz1.png" alt="Imagen 2">
+      </div>
+      <div class="bottom">
+        <img src="imagenes/computer.png" alt="Imagen inferior derecha">
+      </div>
+
+      <div class="buttons">
+        <a href="future.html" class="boton-link">how</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

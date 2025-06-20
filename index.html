@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>there is a hidden button</title>
+  <link rel="stylesheet" href="index.css"/>
+  <style>
+    .boton-redireccion {
+      position: absolute;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: rgba(159, 159, 159, 0.604);
+      text-decoration: underline;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .boton-redireccion:hover {
+      background-color:rgba(255, 255, 255, 0.332);
+    }
+
+    .content {
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>find me</h1>
+    <p>i eat glass it does not hurt me</p>
+  </div>
+
+  <a href="hall.html" class="boton-redireccion" id="botonClick">do not hurt me</a>
+
+  <script>
+    const boton = document.getElementById("botonClick");
+
+    window.onload = () => {
+      const maxX = window.innerWidth - 150;
+      const maxY = window.innerHeight - 150;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      boton.style.left = `${randomX}px`;
+      boton.style.top = `${randomY}px`;
+    };
+  </script>
+
+</body>
+</html>

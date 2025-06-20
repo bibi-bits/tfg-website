@@ -1,0 +1,30 @@
+body,html{
+    font-family:monospace;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(imagenes/fog.jpg);
+    background-size:100% ;
+}
+.content{
+    text-align: center;
+    padding: 20px;
+    background-color: transparent ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(red, green, blue, alpha);
+}
+
+.boton-redireccion{
+    background-color: transparent;
+    color:rgba(168, 168, 168, 0.545);
+    padding: 10px 20px;
+    display:inline-block ;
+    margin-top: 40px;
+    border-radius: 5px;
+    text-decoration: un;
+}
+.boton-redireccion:hover{
+    background-color: rgba(255, 255, 255, 0.264);
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Click to Show Image</title>
+  <style> /* ESTE CODIGO NO FUNCIONA*/
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    img.random-image {
+      position: absolute;
+      max-width: 200px;
+      max-height: 200px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const images = [
+    "imagenes/serial.jpg",
+    "imagenes/cosmic.jpg",
+    "imagenes/computer.png"
+  ];
+
+  document.body.addEventListener("click", () => {
+    const img = document.createElement("img");
+    img.src = images[Math.floor(Math.random() * images.length)];
+    img.className = "random-image";
+
+    const x = Math.random() * (window.innerWidth - 200);
+    const y = Math.random() * (window.innerHeight - 200);
+
+    img.style.left = `${x}px`;
+    img.style.top = `${y}px`;
+
+    document.body.appendChild(img);
+  });
+</script>
+
+</body>
+</html>

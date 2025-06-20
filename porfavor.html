@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>dialogue</title>
+  <style>
+    body {
+      margin: 0;
+      background: rgb(255, 255, 255);
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+      gap: 0px;
+      height: 141vh;
+      align-items: flex-end;
+    }
+
+    canvas {
+      transform: rotate(-90deg);
+      transform-origin: center;
+      background: black;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    const url = 'trans.pdf';
+
+    const loadingTask = pdfjsLib.getDocument(url);
+    loadingTask.promise.then(pdf => {
+      const totalPages = pdf.numPages;
+
+      for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+        pdf.getPage(pageNumber).then(page => {
+          const scale = 1.5;
+          const viewport = page.getViewport({ scale });
+
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+
+          page.render(renderContext).promise.then(() => {
+            document.body.appendChild(canvas);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
