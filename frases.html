@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Frases Aleatorias</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    .frase {
+      position: absolute;
+      opacity: 0;
+      font-size: 20px;
+      transition: opacity 1s ease-in-out;
+      white-space: nowrap;
+    }
+
+    .frase.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Cargar frases desde un archivo TXT
+  async function cargarFrases() {
+    const response = await fetch("frases.txt"); // archivo frases.txt en el mismo directorio
+    const texto = await response.text();
+    return texto.split("\n").filter(linea => linea.trim() !== "");
+  }
+
+  function mostrarFrase(frase) {
+    const elemento = document.createElement("div");
+    elemento.className = "frase";
+    elemento.textContent = frase;
+
+    // Posición aleatoria dentro de la ventana
+    const maxX = window.innerWidth - 200; // margen para que no se corte
+    const maxY = window.innerHeight - 50;
+    const x = Math.floor(Math.random() * maxX);
+    const y = Math.floor(Math.random() * maxY);
+
+    elemento.style.left = x + "px";
+    elemento.style.top = y + "px";
+
+    document.body.appendChild(elemento);
+
+    // Mostrar (fade-in)
+    setTimeout(() => elemento.classList.add("visible"), 50);
+
+    // Ocultar después de 3s (fade-out)
+    setTimeout(() => {
+      elemento.classList.remove("visible");
+      setTimeout(() => elemento.remove(), 1000); // esperar transición
+    }, 3000);
+  }
+
+  async function iniciar() {
+    const frases = await cargarFrases();
+    let i = 0;
+
+    setInterval(() => {
+      mostrarFrase(frases[i]);
+      i = (i + 1) % frases.length; // volver al inicio si se acaba
+    }, 500); // cada 0.5s aparece una nueva frase
+  }
+
+  iniciar();
+</script>
+
+</body>
+</html>
